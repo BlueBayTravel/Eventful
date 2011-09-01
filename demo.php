@@ -2,7 +2,7 @@
 
 	/**
 	 * Eventful Demo
-	 * @author James Brook <james@bluebaytravel.co.uk>
+	 * @author James Brooks <james@bluebaytravel.co.uk>
 	 * @version 0.0.1
 	 */
 
