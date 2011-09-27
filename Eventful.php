@@ -3,7 +3,7 @@
 	/**
 	 * @author James Brooks <james@bluebaytravel.co.uk
 	 * @package Eventful
-	 * @version 0.1
+	 * @version 0.2
 	 */
 
 	class Eventful {
@@ -107,7 +107,15 @@
 				'user_key' => $this->user_key
 			);
 
-			$post_args = array_merge($post_args, $args);
+			foreach ($args as $key => $value) {
+				if(is_array($value)) {
+					foreach($value as $instance) {
+						$post_args[$key] = $instance;
+					}
+				}else{
+					$post_args[$key] = $value;
+				}
+			}
 
 			$fields_string = "";
 			foreach($post_args as $key=>$value) { $fields_string .= $key . '=' . urlencode($value) . "&"; }
