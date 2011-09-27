@@ -28,4 +28,4 @@ Now you're logged in, you can use the `call` method to make API requests!
     echo print_r($evEvent, true);
 
 ## Getting an API Key
-Before you can use the PHP class, you're required to register for an API key from Eventful.com - see [http://api.eventful.com]
+Before you can use the PHP class, you're required to register for an API key from Eventful.com - see [api.eventful.com](http://api.eventful.com)
