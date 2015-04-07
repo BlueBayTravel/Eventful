@@ -1,0 +1,27 @@
+{
+    "name": "bluebaytravel/eventful",
+    "description": "Eventful.com wrapper.",
+    "keywords": ["eventful", "api"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "James Brooks",
+            "email": "james@bluebaytravel.co.uk"
+        }
+    ],
+    "require": {
+        "php": ">=5.3",
+        "ext-curl": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "BlueBayTravel\\Eventful\\": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
+    "minimum-stability": "dev"
+}

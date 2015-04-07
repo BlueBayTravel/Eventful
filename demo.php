@@ -1,29 +1,18 @@
-<?php 
+<?php
 
-	/**
-	 * Eventful Demo
-	 * @author James Brooks <james@bluebaytravel.co.uk>
-	 * @version 0.0.1
-	 */
+require_once "src/Eventful.php";
 
-	require_once "Eventful.php";
+$eV = new Eventful('ENTER_APP_KEY');
 
-	$AppKey = "ENTER_APP_KEY";
+$evLogin = $eV->login('USERNAME', 'PASSWORD');
+if ($evLogin) {
+    $evArgs = [
+        'location' => 'Mexico',
+    ];
 
-	$eV = new Eventful($AppKey);
+    $cEvent = $eV->call('events/search', $evArgs);
 
-	$evLogin = $eV->login('USERNAME', 'PASSWORD');
-	if($evLogin) {
-		$evArgs = array(
-			'location' => 'Mexico'
-		);
-
-		$cEvent = $eV->call('events/search', $evArgs);
-
-		echo "<pre>" . print_r($cEvent, true) . "</pre>";
-	}else{
-		die("<strong>Error logging into Eventful API</strong>");
-	}
-
-
-?>
+    echo "<pre>".print_r($cEvent, true)."</pre>";
+} else {
+    die("<strong>Error logging into Eventful API</strong>");
+}
