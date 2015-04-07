@@ -6,7 +6,6 @@ use SimpleXMLElement;
 
 class Eventful
 {
-
     /**
      * API endpoint.
      *
@@ -23,6 +22,7 @@ class Eventful
 
     /**
      * Username.
+     *
      * @var string
      */
     private $user = null;
@@ -56,7 +56,7 @@ class Eventful
     protected $responseData = null;
 
     /**
-     * Create a new client
+     * Create a new client.
      *
      * @param string $appKey
      */
@@ -81,7 +81,7 @@ class Eventful
         $data = $this->responseData;
         $nonce = $data['nonce'];
 
-        $response = md5($nonce . ":" . md5($password));
+        $response = md5($nonce.":".md5($password));
 
         $args = [
             'nonce'    => $nonce,
@@ -151,10 +151,10 @@ class Eventful
         if ($data->getName() === 'error') {
             $error = $data['string'].": ".$data->description;
             $code = $data['string'];
+
             return false;
         }
 
         return $data;
     }
-
 }
