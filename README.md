@@ -22,15 +22,16 @@ The `login` method simply calls the API request `users/login` but handles all of
 
 You can boolean check $evLogin to see if the login has been successful.
 
-Now you're logged in, you can use the `call` method to make API requests!
+Now that you're logged in, you can use the `call` method to make API requests!
 
 ```php
-$aArgs = array(
+$aArgs = [
     'location' => 'Mexico'
-);
+];
+
 $evEvent = $ev->call('events/search', $aArgs);
 
-echo print_r($evEvent, true);
+var_dump($evEvent);
 ```
 
 ## Getting an API Key
