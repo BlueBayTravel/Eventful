@@ -1,18 +1,21 @@
-# Eventful API PHP Class
-I developed this class when I found that the current Eventful PHP class requires PEAR packages and other extra includes that were bulky and in my ideal world - a waste of space.
+# Eventful
 
-So I started developing a prerequisite free class. **At least, only using CURL, which is installed on many servers by default anyway!**
+- Composer friendly.
+- Only requires cURL.
 
-## Functions / Documentation
+## Getting an API Key
+Before you can use the PHP class, you're required to register for an API key from Eventful.com - see [api.eventful.com](http://api.eventful.com)
+
+## Documentation
 This class includes only two functions which are required to request and process information from Eventful.
 
-When invoking the class, call the API with the __construct method.
+To get started:
 
 ```php
 $ev = new Eventful($APP_KEY);
 ```
 
-Then, you need to login, so call the login method!
+Then you need to login:
 
 ```php
 $evLogin = $ev->login($USERNAME, $PASSWORD);
@@ -34,8 +37,5 @@ $evEvent = $ev->call('events/search', $aArgs);
 var_dump($evEvent);
 ```
 
-## Getting an API Key
-Before you can use the PHP class, you're required to register for an API key from Eventful.com - see [api.eventful.com](http://api.eventful.com)
-
 # License
-MIT - [http://jbrooksuk.mit-license.org](http://jbrooksuk.mit-license.org)
+[MIT](/LICENSE)
