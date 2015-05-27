@@ -12,7 +12,7 @@ if ($evLogin) {
 
     $cEvent = $eV->call('events/search', $evArgs);
 
-    echo "<pre>".print_r($cEvent, true)."</pre>";
+    var_dump($cEvent);
 } else {
-    die("<strong>Error logging into Eventful API</strong>");
+    die('<strong>Error logging into Eventful API</strong>');
 }

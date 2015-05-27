@@ -81,7 +81,7 @@ class Eventful
         $data = $this->responseData;
         $nonce = $data['nonce'];
 
-        $response = md5($nonce.":".md5($password));
+        $response = md5($nonce.':'.md5($password));
 
         $args = [
             'nonce'    => $nonce,
@@ -149,7 +149,7 @@ class Eventful
         $data = new SimpleXMLElement($cResult);
 
         if ($data->getName() === 'error') {
-            $error = $data['string'].": ".$data->description;
+            $error = $data['string'].': '.$data->description;
             $code = $data['string'];
 
             return false;
