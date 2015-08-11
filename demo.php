@@ -1,6 +1,6 @@
 <?php
 
-require_once "src/Eventful.php";
+require_once 'src/Eventful.php';
 
 $eV = new Eventful('ENTER_APP_KEY');
 
